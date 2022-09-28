@@ -11,10 +11,14 @@ const connect = function () {
   conn.setEncoding("utf8");
   conn.on('data', (data)  => {
     console.log(data.toString());
-    conn.write('Name: A.H')
   });
   return conn;
 };
 
+const { connect } = require("./client");
+const { setupInput } = require("./input");
+
 console.log("Connecting ...");
 connect();
+
+setupInput();
